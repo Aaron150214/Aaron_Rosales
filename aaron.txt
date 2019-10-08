@@ -1,0 +1,252 @@
+ http://www.sqlservertutorial.net/sql-server-triggers/sql-server-create-trigger/
+https://www.w3schools.com/sql/
+
+
+
+{
+            //    //Tipos de Datos
+
+            //    string CadenaDeTexto = " bienvenido al mundo de la programación";
+            //    int Numeros = 1;
+            //    char Caracter = 's';
+            //    float NumerosDecimales = 10.50F;
+            //    decimal NumerosDecimales2 = 10.20M;
+            //    bool VerdaderoOFalso = false;
+
+
+
+
+
+
+            int resultado = 10 / 2;
+            int resultado1 = 10 + 10;
+            int resultado3 = 2 % 30;
+            Console.WriteLine(resultado1);
+            Console.WriteLine(resultado);
+            Console.WriteLine(resultado3);
+
+
+
+
+
+            //    //Tipos de Operadores
+
+            //    //Suma +
+            //    //Resta -
+            //    //Division /
+            //    //Multiplicacion *
+            //    //Modulo %
+
+            //    //int Resultado = 5 + 5;
+            //    //int Resultado1 = 5 - 1;
+            //    //Console.WriteLine(Resultado1);
+
+            int Resultado11 = 20 - 10;
+            int resultado20 = 30 + 20;
+            Console.WriteLine(resultado20);
+
+            //    //Tipos de Operadores Logicos
+            //    //AND &&
+            //    //OR  ||
+            //    //INVERSOR !
+
+
+            //if (CadenaDeTexto == "bienvenido al mundo de la programacion")
+            //{
+            //    Console.WriteLine(si es verdadero);
+            //}
+
+
+
+            //    //Realizaar condiciones
+
+            //    if (CadenaDeTexto == "Hola")
+            //    {
+            //        Console.WriteLine("Si es verdadera");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("No es verdadera");
+            //    }
+            //}
+
+            ////    //if (CadenaDeTexto != "Hola")
+            //    //{
+            //    //    Console.WriteLine("Si es verdadera");
+            //    //}
+            //    //else
+            //    //{
+            //    //    Console.WriteLine("No es verdadera");
+            //    //}
+
+            //    //if (!VerdaderoOFalso == true)
+            //    //{
+            //    //    Console.WriteLine("Si es verdadera");
+            //    //}
+            //    //else
+            //    //{
+            //    //    Console.WriteLine("No es verdadera");
+            //    //}
+
+            //    //if (VerdaderoOFalso == true)
+            //    //    Console.WriteLine("Es correcto");
+            //    //else
+            //    //Console.WriteLine("Es incorrecto");
+
+            //    //for (int i = 2; i <= 10; i++)
+            //    //{
+            //    //    Console.WriteLine("Hola soy el numero: "+i);
+            //    //}
+
+            //    Console.WriteLine("Introduce tu nombre: ");
+            //    string IntroduceTuNombre = Console.ReadLine();
+            //    Console.WriteLine("Hola " + IntroduceTuNombre + CadenaDeTexto);
+
+            Console.WriteLine("introduce tu idusuario ");
+            string intruducetuidusuario = Console.ReadLine();
+            Console.WriteLine("HOLA" + intruducetuidusuario);
+
+            
+
+        Console.Read();
+
+
+        }
+        
+      
+       
+
+         
+
+
+
+
+
+    }
+
+
+		tablas sql
+
+select * from dbo.CLIENTE as a
+inner join dbo.INSCRIPCION as b on a.ID_CLIENTE = b.ID_CLIENTE;
+inn
+}
+
+
+
+
+ID ASIGNACION      
+NOMBRE
+APELLIDO 
+ID CLIENTE
+ID INSCRIPCION 
+FOLIO
+
+
+SELECT TOP (1000) [ID_CLIENTE]
+      ,[NOMBRE]
+      ,[APELLIDO]
+  FROM [CLIENTE].[dbo].[CLIENTE]
+
+
+
+
+
+
+
+SELECT TOP (1000) [id_inscripcion]
+      ,[nombre]
+      ,[folio]
+  FROM [CLIENTE].[dbo].
+
+
+
+
+select * from CLIENTE
+inner join ASIGNACION
+on ASIGNACION.NOMBRE = CLIENTE.NOMBRE
+
+select * from MEMBRESIA
+inner join folio1
+on folio1.nombre = MEMBRESIA.NOMBRE
+
+select * from ASIGNACION
+inner join CLIENTE
+on CLIENTE.NOMBRE = ASIGNACION.NOMBRE
+
+
+
+select ID_CLIENTE, ID_ASIGNACION, NOMBRE  from ASIGNACION
+inner join CLIENTE
+on CLIENTE.NOMBRE = ASIGNACION.NOMBRE
+inner join MEMBRESIA on ASIGNACION.NOMBRE =CLIENTE.NOMBRE
+		
+		TRIGGER
+
+create trigger tr_matricula_insert
+on matricula
+for insert
+as
+print 'hubo un cambio en la tabla matricula'; 
+
+insert into matricula values ('aaron',' rosales',1234);
+
+
+create trigger tr_matricula_insert2
+on matricula
+after insert
+as
+print 'hubo un cambio en la tabla matricula2'; 
+
+insert into matricula values ('aaron2',12342);
+
+
+
+		CONSTRAINT
+
+CREATE TABLE PRUEBA1
+(
+NOMBRECOLUMNA1 INT NULL,
+NOMBRECOLUMNA2 VARCHAR (100) NOT NULL,
+NOMBRECOLUMNA3 NVARCHAR (200) NOT NULL,
+--VALORES POSITIVOS
+CONSTRAINT CH_NOMBRERESTRICCION CHECK (NOMBRECOLUMNA1>-0),
+--SOLO VALORES IGUALES A 10 20 30 40
+CONSTRAINT CH_NOMBRERESTRICCION2 CHECK (NOMBRECOLUMNA1 IN (10,20,30,40)),
+--VALORES CONTENIDOEN UN RANGO
+CONSTRAINT CH_NOMBRERESTRICCION3 CHECK (NOMBRECOLUMNA1>=1 AND 
+NOMBRECOLUMNA1 <=30)
+);
+
+			DEFAULT
+
+CREATE TABLE NOMBRETABLA
+(
+NOMBRECOLUMNA1 INT NULL CONSTRAINT DF_NOMBRERESTRICCION DEFAULT (0),
+NOMBRECOLUMNA2 VARCHAR (100) NOT NULL,
+NOMBRECOLUMNA3 NVARCHAR (200) NOT NULL,
+);
+
+SELECT *
+FROM sys.default_constraints
+WHERE parent_object_id = OBJECT_ID('NOMBREESQUEMA.NOMBRETABLA');
+
+
+			FOREIGN KEY
+
+CREATE TABLE ORDERS (
+ORDERID INT NOT NULL,
+ORDERNUMBER INT NOT NULL,
+PERSONID INT,
+PRIMARY KEY (ORDERID),
+FOREIGN KEY (PERSONID) REFERENCES MATRICULA (ID_MATRICULA)
+);
+
+ ''
+
+			insert
+
+insert into MATRICULA values (1234, 'aaron', 789);
+
+
+ 
